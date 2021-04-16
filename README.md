@@ -5,6 +5,8 @@ Hello and thank you for reviewing.  In the following README I've documented the 
 
 <br />
 
+## Features and Limitations
+
 A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad. In addition to utilizing an `iframe` to access a gumroad product page, this script does the following:
 
 <ul>
@@ -18,13 +20,7 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 
 <img width="348" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
 
-## How to demo (via cloning this repo)
-
-For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
-
-<img width="916" alt="Screen Shot 2021-04-16 at 1 57 58 AM" src="https://user-images.githubusercontent.com/68410363/114978425-2e3c9e00-9e57-11eb-9937-9d0be92dd716.png">
-
-## How to demo (via one-line unpkg script tag)
+## How to Demo (via one-line unpkg script tag)
 
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a user could import one line of code into their site for functionality: 
 <br />
@@ -44,5 +40,12 @@ Please note that changing `data-show` to `false` will remove the button. This wa
 Ultimately, to use simply import these two lines of code into your website
 `<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>
 <script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
+
+
+## How to Demo (via cloning this repo)
+
+For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
+
+<img width="916" alt="Screen Shot 2021-04-16 at 1 57 58 AM" src="https://user-images.githubusercontent.com/68410363/114978425-2e3c9e00-9e57-11eb-9937-9d0be92dd716.png">
 
 ## Demo
