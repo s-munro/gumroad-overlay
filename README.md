@@ -26,11 +26,15 @@ For convenience, I've included an `index.html` file in this with everything alre
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a client could import one line of code into their site for functionality: <br />
 `<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
 <br />
+<br />
 From there, they will only have to create a gumroad button:
+<br />
 <br />
 `<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>`
 <br />
+<br />
 Please note that changing `data-show` to `false` will remove the button. This was done as a demonstration for Sahil's request: `Read data-attrs of the anchor tags to show a button or not, make it embed or not, etc.`
+<br />
 <br />
 Ultimately, to use simply import these two lines of code into your website
 `<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>
