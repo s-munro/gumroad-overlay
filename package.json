@@ -1,0 +1,20 @@
+{
+  "name": "samroad-overlay",
+  "version": "1.0.0",
+  "description": "A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad.",
+  "main": "dist/script.js",
+  "scripts": {
+    "build": "uglifyjs --compress --mangle -- script.js > dist/script.js",
+    "deploy": "npm run build && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-munro/gumroad-overlay.git"
+  },
+  "author": "Sam Munro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s-munro/gumroad-overlay/issues"
+  },
+  "homepage": "https://github.com/s-munro/gumroad-overlay#readme"
+}
