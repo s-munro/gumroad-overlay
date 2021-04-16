@@ -17,7 +17,7 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 
 ## How to demo (via cloning this repo)
 
-For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports (see below) in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
+For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
 
 <img width="916" alt="Screen Shot 2021-04-16 at 1 57 58 AM" src="https://user-images.githubusercontent.com/68410363/114978425-2e3c9e00-9e57-11eb-9937-9d0be92dd716.png">
 
