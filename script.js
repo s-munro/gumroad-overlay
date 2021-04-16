@@ -38,6 +38,8 @@ const addModal = (url) => {
     overlayContainer.id = 'samroad-overlay';
     overlayContainer.classList.add('samroad-overlay');
     document.body.appendChild(overlayContainer);
+
+    addClickAwayListener('samroad-overlay', overlayContainer);
   } else {
     // make an error message
   }
