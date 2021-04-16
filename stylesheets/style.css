@@ -12,6 +12,7 @@
   color: #999;
   text-decoration: none;
   font-weight: 500;
+  max-width: 200px;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: space-between;

@@ -6,7 +6,8 @@ const stylesheets = ['style'];
 const addSheet = (sheet) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.5/stylesheets/${sheet}.css`;
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.6/stylesheets/${sheet}.css`;
+  //   styleSheet.href = `./stylesheets/style.css`;
   document.head.appendChild(styleSheet);
 };
 
@@ -75,6 +76,8 @@ const addModal = (url) => {
     // removes elem in arg on clickaway, overlay fade-out
     addClickAwayListener('samroad-overlay', overlayContainer);
   } else {
+    console.log(url);
+    console.log(validURL);
     // show error toast if product link not from gumroad
     showError(samroadToast);
   }
