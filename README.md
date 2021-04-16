@@ -1,1 +1,26 @@
 # gumroad-overlay
+
+A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad. In addition to utilizing an `iframe` to access a gumroad product page, this script does the following:
+
+<ul>
+<li>Can be implemented as a single javascript file or `script tag` (see below)</li>
+<li>Supports custom subdomains for creators (e.g. sahil.gumroad.com/pencil).  As of Apr 15 non-gumroad domains are unsupported, but I would like to add in this functionality.</li>
+<li>Early loads pages on hover</li>
+<li>Has a specified `data-attr` to modify the button</li>
+</ul>
+
+I came across certain iframe-related `CORS` restrictions while trying to replicate/implement certain functionalities and styles, so I'm intrigued by how Gumroad worked around this. Specifically, it seems that the actual Gumroad overlay may not be an iframe (I investigated via inspect tool). Nevertheless, I stuck with iframes to follow along with the challenge's instructions.
+
+## How to demo (via cloning this repo)
+
+For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports (see below) in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
+
+## How to demo (via one-line unpkg script tag)
+
+To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a client could import one line of code into their site for functionality:
+`<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
+From there, they will only have to create a gumroad button:
+`<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>`
+Please note that changing `data-show` to `false` will remove the button. This was done as a demonstration for Sahil's request: `Read data-attrs of the anchor tags to show a button or not, make it embed or not, etc.`
+
+## Demo
