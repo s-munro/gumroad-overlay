@@ -21,20 +21,26 @@ const addModal = (url) => {
   const samroadIFrame = document.createElement('iframe');
   const samroadToast = document.createElement('div');
 
-  // add iframe to modal, add src and ID, append to modal
-  samroadIFrame.id = 'samroad-iframe';
-  samroadIFrame.src = url;
-  samroadModal.appendChild(samroadIFrame);
+  // insert regex for URL validation
 
-  // add modal to overlay, add classes and ID
-  samroadModal.classList.add('samroad-modal');
-  samroadModal.id = 'samroad-modal';
-  overlayContainer.appendChild(samroadModal);
+  if (validURL) {
+    // add iframe to modal, add src and ID, append to modal
+    samroadIFrame.id = 'samroad-iframe';
+    samroadIFrame.src = url;
+    samroadModal.appendChild(samroadIFrame);
 
-  // add overlay to document last, add classes and ID
-  overlayContainer.id = 'samroad-overlay';
-  overlayContainer.classList.add('samroad-overlay');
-  document.body.appendChild(overlayContainer);
+    // add modal to overlay, add classes and ID
+    samroadModal.classList.add('samroad-modal');
+    samroadModal.id = 'samroad-modal';
+    overlayContainer.appendChild(samroadModal);
+
+    // add overlay to document last, add classes and ID
+    overlayContainer.id = 'samroad-overlay';
+    overlayContainer.classList.add('samroad-overlay');
+    document.body.appendChild(overlayContainer);
+  } else {
+    // make an error message
+  }
 };
 
 const addClickAwayListener = (idForRemoval, overlayContainer) => {
