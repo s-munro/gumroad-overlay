@@ -37,7 +37,24 @@ const addModal = (url) => {
   document.body.appendChild(overlayContainer);
 };
 
+const addListeners = (tag) => {
+  tag.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const url = tag.href;
+    addModal(url);
+  });
+};
+
 (() => {
   addSheets(stylesheets);
   const tags = document.getElementsByClassName('samroad-button');
+
+  for (let tag of tags) {
+    const showTag = tag.getAttribute('data-show');
+    if (showTag === 'false') {
+      tag.remove();
+    }
+    addListeners(tag);
+  }
 })();
