@@ -6,7 +6,7 @@ const stylesheets = ['style'];
 const addSheet = (sheet) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.9/stylesheets/${sheet}.css`;
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.1.4/stylesheets/${sheet}.css`;
   document.head.appendChild(styleSheet);
 };
 
@@ -37,7 +37,7 @@ const showError = (toast) => {
   }, 2500);
 };
 
-const addModal = (url) => {
+const addModal = (tag, url) => {
   // initialize the html elements
   const overlayContainer = document.createElement('div');
   const samroadModal = document.createElement('div');
@@ -65,20 +65,26 @@ const addModal = (url) => {
     overlayContainer.classList.add('samroad-overlay');
     document.body.appendChild(overlayContainer);
 
-    // overlay starts with opacity 0, this makes it fade in
-    requestAnimationFrame(() =>
-      setTimeout(() => {
-        overlayContainer.style.opacity = 1;
-      })
-    );
-
-    // removes elem in arg on clickaway, overlay fade-out
-    addClickAwayListener('samroad-overlay', overlayContainer);
+    // fades in the modal and adds clickaway listener
+    tag.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      requestAnimationFrame(() =>
+        setTimeout(() => {
+          overlayContainer.style.opacity = 1;
+          overlayContainer.style.zIndex = 1;
+        })
+      );
+      // removes elem on clickaway
+      addClickAwayListener('samroad-overlay', overlayContainer);
+    });
   } else {
-    console.log(url);
-    console.log(validURL);
-    // show error toast if product link not from gumroad
-    showError(samroadToast);
+    tag.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      // show error toast if product link not from gumroad
+      showError(samroadToast);
+    });
   }
 };
 
@@ -95,11 +101,10 @@ const addClickAwayListener = (idForRemoval, overlayContainer) => {
 };
 
 const addListeners = (tag) => {
-  tag.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
+  // mouseover initializes the modal and hides it, creates an onclick to show modal or show error toast (depending on URL)
+  tag.addEventListener('mouseover', function (e) {
     const url = tag.href;
-    addModal(url);
+    addModal(tag, url);
   });
 };
 
