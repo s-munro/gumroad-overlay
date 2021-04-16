@@ -1,4 +1,3 @@
-
 # gumroad-overlay
 
 <img width="348" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
@@ -20,6 +19,8 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 
 For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports (see below) in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
 
+<img width="916" alt="Screen Shot 2021-04-16 at 1 57 58 AM" src="https://user-images.githubusercontent.com/68410363/114978425-2e3c9e00-9e57-11eb-9937-9d0be92dd716.png">
+
 ## How to demo (via one-line unpkg script tag)
 
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a client could import one line of code into their site for functionality:
@@ -27,5 +28,9 @@ To simulate something as close as possible to the authentic Gumroad overlay, thi
 From there, they will only have to create a gumroad button:
 `<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>`
 Please note that changing `data-show` to `false` will remove the button. This was done as a demonstration for Sahil's request: `Read data-attrs of the anchor tags to show a button or not, make it embed or not, etc.`
+
+Ultimately, to use simply import these two lines of code into your website
+`<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>
+<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
 
 ## Demo
