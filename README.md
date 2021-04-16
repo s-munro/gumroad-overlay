@@ -34,7 +34,7 @@ From there, they will only have to create a gumroad button:
 `<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>`
 <br />
 <br />
-Please note that changing `data-show` to `false` will remove the button. This was done as a demonstration for Sahil's request: `Read data-attrs of the anchor tags to show a button or not, make it embed or not, etc.`
+Please note that changing `data-show` to `false` will remove the button. This was done as a demonstration for Sahil's request: ***Read data-attrs of the anchor tags to show a button or not, make it embed or not, etc.***
 <br />
 <br />
 Ultimately, to use simply import these two lines of code into your website
