@@ -38,8 +38,10 @@ Please note that changing `data-show` to `false` will remove the button. This wa
 <br />
 <br />
 Ultimately, to use simply import these two lines of code into your website
-`<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>
-<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
+```
+<a class="samroad-button" href="https:/gum.co/peVsK" data-show="true">Buy my product</a>
+<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>
+```
 
 
 ## How to Demo (via cloning this repo)
