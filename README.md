@@ -23,7 +23,9 @@ For convenience, I've included an `index.html` file in this with everything alre
 
 ## How to demo (via one-line unpkg script tag)
 
-To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a client could import one line of code into their site for functionality: <br />
+To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a user could import one line of code into their site for functionality: 
+<br />
+<br />
 `<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
 <br />
 <br />
