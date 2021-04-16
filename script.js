@@ -6,8 +6,7 @@ const stylesheets = ['style'];
 const addSheet = (sheet) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.6/stylesheets/${sheet}.css`;
-  //   styleSheet.href = `./stylesheets/style.css`;
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.9/stylesheets/${sheet}.css`;
   document.head.appendChild(styleSheet);
 };
 
