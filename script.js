@@ -6,7 +6,7 @@ const stylesheets = ['style'];
 const addSheet = (sheet) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = `https://unpkg.com/samroad-overlay@1.1.4/stylesheets/${sheet}.css`;
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.1.5/stylesheets/${sheet}.css`;
   document.head.appendChild(styleSheet);
 };
 
@@ -17,21 +17,23 @@ const addSheets = (sheets) => {
   }
 };
 
+/**
+ * shows error with animations
+ * animations: toast fade in, fade out (after 2s), then removal (after 2.5s)
+ * animations were done with setTimeout due to unusual DOM interactions, would ideally look into this.
+ */
 const showError = (toast) => {
   toast.classList.add('samroad-toast');
   toast.textContent = 'Error! Looks like the url is invalid :(';
   document.body.appendChild(toast);
-  // initialize opacity 1 for fade-in
   requestAnimationFrame(() =>
     setTimeout(() => {
       toast.style.opacity = 1;
     })
   );
-  // Fade-in
   setTimeout(() => {
     toast.style.opacity = 0;
   }, 2000);
-  // Toast disappears after timeout
   setTimeout(() => {
     toast.remove();
   }, 2500);
@@ -44,11 +46,11 @@ const addModal = (tag, url) => {
   const samroadIFrame = document.createElement('iframe');
   const samroadToast = document.createElement('div');
 
-  // regex for URL validation -- check if gumroad link
+  // for validating URLs - gumroad-only (custom urls included)
   const validURLRegex = /(https:\/\/gumroad\.com\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
   const validURL = validURLRegex.test(url);
 
-  // if gumroad link, create modal
+  // if gumroad link, create modal and add click listener for reveal
   if (validURL) {
     // add iframe to modal, add src and ID, append to modal
     samroadIFrame.id = 'samroad-iframe';
@@ -78,11 +80,12 @@ const addModal = (tag, url) => {
       // removes elem on clickaway
       addClickAwayListener('samroad-overlay', overlayContainer);
     });
+
+    // show error toast if product link not from gumroad
   } else {
     tag.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      // show error toast if product link not from gumroad
       showError(samroadToast);
     });
   }
