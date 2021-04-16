@@ -1,4 +1,5 @@
 # gumroad-overlay
+Hello and thank you for reviewing.  In the following README I've documented the functionalities of my demo, as well as how you can try it out locally.  Please read on for information and instructions!
 
 <img width="348" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
 <img width="1786" alt="Screen Shot 2021-04-16 at 1 56 45 AM" src="https://user-images.githubusercontent.com/68410363/114978267-02b9b380-9e57-11eb-9876-bd7806f2573e.png">
