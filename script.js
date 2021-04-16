@@ -37,6 +37,15 @@ const addModal = (url) => {
   document.body.appendChild(overlayContainer);
 };
 
+const addClickAwayListener = (idForRemoval, overlayContainer) => {
+  const clickawayTarget = document.getElementById(idForRemoval);
+  clickawayTarget.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    clickawayTarget.remove();
+  });
+};
+
 const addListeners = (tag) => {
   tag.addEventListener('click', function (e) {
     e.preventDefault();
