@@ -4,7 +4,10 @@ const stylesheets = ['style'];
 
 // adds stylesheet to HTML for button, overlay, and modal.
 const addSheet = (sheet) => {
-  document.head.innerHTML += `<link rel="stylesheet" href="./stylesheets/${sheet}.css">`;
+  const styleSheet = document.createElement('link');
+  styleSheet.rel = 'stylesheet';
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.0.5/stylesheets/${sheet}.css`;
+  document.head.appendChild(styleSheet);
 };
 
 // in case more sheets are to-be added
@@ -14,6 +17,26 @@ const addSheets = (sheets) => {
   }
 };
 
+const showError = (toast) => {
+  toast.classList.add('samroad-toast');
+  toast.textContent = 'Error! Looks like the url is invalid :(';
+  document.body.appendChild(toast);
+  // initialize opacity 1 for fade-in
+  requestAnimationFrame(() =>
+    setTimeout(() => {
+      toast.style.opacity = 1;
+    })
+  );
+  // Fade-in
+  setTimeout(() => {
+    toast.style.opacity = 0;
+  }, 2000);
+  // Toast disappears after timeout
+  setTimeout(() => {
+    toast.remove();
+  }, 2500);
+};
+
 const addModal = (url) => {
   // initialize the html elements
   const overlayContainer = document.createElement('div');
@@ -21,8 +44,11 @@ const addModal = (url) => {
   const samroadIFrame = document.createElement('iframe');
   const samroadToast = document.createElement('div');
 
-  // insert regex for URL validation
+  // regex for URL validation -- check if gumroad link
+  const validURLRegex = /(https:\/\/gumroad\.com\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
+  const validURL = validURLRegex.test(url);
 
+  // if gumroad link, create modal
   if (validURL) {
     // add iframe to modal, add src and ID, append to modal
     samroadIFrame.id = 'samroad-iframe';
@@ -39,9 +65,18 @@ const addModal = (url) => {
     overlayContainer.classList.add('samroad-overlay');
     document.body.appendChild(overlayContainer);
 
+    // overlay starts with opacity 0, this makes it fade in
+    requestAnimationFrame(() =>
+      setTimeout(() => {
+        overlayContainer.style.opacity = 1;
+      })
+    );
+
+    // removes elem in arg on clickaway, overlay fade-out
     addClickAwayListener('samroad-overlay', overlayContainer);
   } else {
-    // make an error message
+    // show error toast if product link not from gumroad
+    showError(samroadToast);
   }
 };
 
@@ -50,7 +85,10 @@ const addClickAwayListener = (idForRemoval, overlayContainer) => {
   clickawayTarget.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
-    clickawayTarget.remove();
+    overlayContainer.style.opacity = 0;
+    setTimeout(() => {
+      clickawayTarget.remove();
+    }, 200);
   });
 };
 

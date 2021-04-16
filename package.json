@@ -1,6 +1,6 @@
 {
   "name": "samroad-overlay",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad.",
   "main": "dist/script.js",
   "scripts": {
