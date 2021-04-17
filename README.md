@@ -32,7 +32,7 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 
 <img width="600" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
 
-## How to Demo (via one-line unpkg script tag)
+## How to Demo
 
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a user could import one line of code into their site for functionality: 
 <br />
