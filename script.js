@@ -6,7 +6,7 @@ const stylesheets = ['style'];
 const addSheet = (sheet) => {
   const styleSheet = document.createElement('link');
   styleSheet.rel = 'stylesheet';
-  styleSheet.href = `https://unpkg.com/samroad-overlay@1.1.5/stylesheets/${sheet}.css`;
+  styleSheet.href = `https://unpkg.com/samroad-overlay@1.1.8/stylesheets/${sheet}.css`;
   document.head.appendChild(styleSheet);
 };
 
@@ -46,8 +46,8 @@ const addModal = (tag, url) => {
   const samroadIFrame = document.createElement('iframe');
   const samroadToast = document.createElement('div');
 
-  // for validating URLs - gumroad-only (custom urls included)
-  const validURLRegex = /(https:\/\/gumroad\.com\/)|(https:\/\/gumroad\.com\/l\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
+  // for validating URLS - supports several domains -- I'm not entirely familiar with the Gumroad URL system, so I would ideally learn more about this.
+  const validURLRegex = /(https:\/\/([a-zA-Z]+\.)?gumroad\.com\/l\/)|(https:\/\/gum\.co\/l\/)|(https:\/\/gum\.co\/)/g;
   const validURL = validURLRegex.test(url);
 
   // if gumroad link, create modal and add click listener for reveal
@@ -71,6 +71,7 @@ const addModal = (tag, url) => {
     tag.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
+      tag.removeEventListener('mouseout', removeOverlay, false);
       requestAnimationFrame(() =>
         setTimeout(() => {
           overlayContainer.style.opacity = 1;
@@ -103,11 +104,20 @@ const addClickAwayListener = (idForRemoval, overlayContainer) => {
   });
 };
 
+// cleanup function for mouseout, prevents multiple overlays from being appended/rendered to DOM
+const removeOverlay = () => {
+  const overlay = document.getElementById('samroad-overlay');
+  if (overlay) {
+    overlay.remove();
+  }
+};
+
 const addListeners = (tag) => {
-  // mouseover initializes the modal and hides it, creates an onclick to show modal or show error toast (depending on URL)
+  // initializes/preloads the modal and error toast, adds mouseout listener for cleanup
   tag.addEventListener('mouseover', function (e) {
     const url = tag.href;
     addModal(tag, url);
+    tag.addEventListener('mouseout', removeOverlay, false);
   });
 };
 
