@@ -12,6 +12,7 @@ https://user-images.githubusercontent.com/68410363/115127404-3a824180-9fa4-11eb-
 
 
 ## Features and Limitations
+[create an anchor](#Features-and-Limitations)
 
 A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad. In addition to utilizing an `iframe` to access a gumroad product page, this script does the following:
 
