@@ -34,6 +34,7 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 
 ## How to Demo
 
+### Best method (one-line script tag)
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a user could import one line of code into their site for functionality: 
 <br />
 <br />
@@ -56,10 +57,8 @@ Ultimately, to use simply import these two lines of code into your website
 ```
 
 
-## How to Demo (via cloning this repo)
+### Alternatively (cloning this repo)
 
 For convenience, I've included an `index.html` file in this with everything already set-up. To run, simply clone this repository and run the `index.html` file in your browser. **Please note:** codepen and jsfiddle seem to modify iframe href attributes, so testing out my script imports in jsfiddle or codepen will not work. I haven't tested this in codesandbox yet.
 
 <img width="916" alt="Screen Shot 2021-04-16 at 1 57 58 AM" src="https://user-images.githubusercontent.com/68410363/114978425-2e3c9e00-9e57-11eb-9937-9d0be92dd716.png">
-
-## Demo
