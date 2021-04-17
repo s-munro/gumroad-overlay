@@ -37,7 +37,7 @@ I came across certain iframe-related `CORS` restrictions while trying to replica
 To simulate something as close as possible to the authentic Gumroad overlay, this project was set up so that a user could import one line of code into their site for functionality: 
 <br />
 <br />
-`<script src="https://unpkg.com/samroad-overlay@1.1.5/dist/script.js"></script>`
+`<script src="https://unpkg.com/samroad-overlay@1.2.0/dist/script.js"></script>`
 <br />
 <br />
 From there, they will only have to create a gumroad button:
