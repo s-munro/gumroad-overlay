@@ -3,6 +3,7 @@ Hello and thank you for reviewing.  In the following README I've documented the 
 
 
 [Features and Limitations](#Features-and-Limitations)
+<br />
 [How to Demo](#How-to-Demo-(via-one-line unpkg-script-tag))
 
 
