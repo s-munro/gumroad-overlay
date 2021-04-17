@@ -1,7 +1,7 @@
 # gumroad-overlay
 Hello and thank you for reviewing.  In the following README I've documented the functionalities of my demo, as well as how you can try it out locally.  Please read on for information and instructions!
 
-<img width="1786" alt="Screen Shot 2021-04-16 at 1 56 45 AM" src="https://user-images.githubusercontent.com/68410363/114978267-02b9b380-9e57-11eb-9876-bd7806f2573e.png">
+<img width="600" alt="Screen Shot 2021-04-16 at 1 56 45 AM" src="https://user-images.githubusercontent.com/68410363/114978267-02b9b380-9e57-11eb-9876-bd7806f2573e.png">
 
 <br />
 
@@ -24,7 +24,7 @@ A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad. In add
 
 I came across certain iframe-related `CORS` restrictions while trying to replicate/implement certain functionalities and styles, so I'm intrigued by how Gumroad worked around this. Specifically, it seems that the actual Gumroad overlay may not be an iframe (I investigated via inspect tool). Nevertheless, I stuck with iframes to follow along with the challenge's instructions.
 
-<img width="348" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
+<img width="600" alt="Screen Shot 2021-04-16 at 1 56 09 AM" src="https://user-images.githubusercontent.com/68410363/114978212-ed448980-9e56-11eb-9d19-b27d9d53ee2e.png">
 
 ## How to Demo (via one-line unpkg script tag)
 
