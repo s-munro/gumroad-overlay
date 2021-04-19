@@ -22,7 +22,7 @@ A mock-up of the Gumroad Overlay, done as a coding challenge for Gumroad. In add
 
 <ul>
 <li>Can be implemented as a single javascript file or `script tag` (see below)</li>
-<li>Supports custom subdomains for creators (e.g. sahil.gumroad.com/pencil).  As of Apr 15 non-gumroad domains are unsupported, but I would like to add in this functionality.</li>
+<li>Supports custom subdomains for creators (e.g. sahil.gumroad.com/pencil).  Currently Non-gumroad domains are unsupported, but I would like to add in this functionality.</li>
 <li>Early loads pages on hover</li>
 <li>Has a specified `data-attr` to modify the button</li>
 </ul>
